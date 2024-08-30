@@ -20,6 +20,7 @@ public class ListaProvince {
                 aggiungiProvincia(abbreviazione, nome, regione);
             }
         }
+
     }
 
 
@@ -41,19 +42,24 @@ public class ListaProvince {
         addTail(nuovaProvincia);
     }
 
-    public void sortProvince(){
-        if(head == null){
+    public void bubbleSort() {
+        if (head == null) {
             return;
         }
 
         boolean swapped;
         Provincia current;
-        Provincia ultimo = null;
-        do{
+        Provincia lastSorted = null;
+
+        do {
             swapped = false;
             current = head;
-            while(current.getNext() != null){
-                if(current.getNome().compareTo(current.getNext().getNome()) >0){
+
+            // Traverse the list up to the lastSorted node
+            while (current.getNext() != lastSorted) {
+                // Swap nodes if they are in the wrong order
+                if (current.getNome().compareTo(current.getNext().getNome()) > 0) {
+                    // Swap the names of the nodes
                     String temp = current.getNome();
                     current.setNome(current.getNext().getNome());
                     current.getNext().setNome(temp);
@@ -62,9 +68,13 @@ public class ListaProvince {
                 }
                 current = current.getNext();
             }
-            ultimo = current;
 
-        }while(swapped);
+            // Mark the end of the sorted portion
+            lastSorted = current;
+
+        } while (swapped);
+
+        System.out.println("SORTED");
     }
 
     public String visualizzaLista(){
@@ -74,6 +84,7 @@ public class ListaProvince {
             elenco += current.toString() + "\n";
             current = current.getNext();
         }
+
 
         return elenco;
     }

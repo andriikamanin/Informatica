@@ -1,13 +1,16 @@
 package business;
 
 import bean.ListaProvince;
+import bean.ListaRegioni;
 
 import java.util.List;
 
 public class EsRegioni {
     ListaProvince listaProvince;
+    ListaRegioni listaRegioni;
     public EsRegioni(){
         listaProvince = new ListaProvince();
+        listaRegioni = new ListaRegioni();
     }
 
     public void aggiungiProvincia(String abbreviazione, String nome, String regione){
@@ -19,8 +22,15 @@ public class EsRegioni {
     }
     public String outputElenco(){
         String elenco = listaProvince.visualizzaLista();
-        System.out.println(elenco);
+
         return elenco;
+    }
+
+    public void bubbleSort(){
+        listaProvince.bubbleSort();
+    }
+    public void visualizzaRegioni(){
+        listaRegioni.visualizzaLista();
     }
 
 }
