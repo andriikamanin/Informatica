@@ -1,7 +1,27 @@
 package bean;
-
+import java.util.List;
 public class ListaProvince {
     private Provincia head;
+
+    public ListaProvince() {
+        head = null;
+    }
+
+    public void creaLista(List<String> elenco) {
+        for (String s : elenco) {
+            // Разбиваем строку на части по запятой
+            String[] parti = s.split(" ");
+            if (parti.length == 3) {
+                String abbreviazione = parti[0].trim();
+                String nome = parti[1].trim();
+                String regione = parti[2].trim();
+
+                // Добавляем новую провинцию в связанный список
+                aggiungiProvincia(abbreviazione, nome, regione);
+            }
+        }
+    }
+
 
     public void addTail(Provincia nuovaProvincia) {
         if (head == null) {
@@ -45,5 +65,16 @@ public class ListaProvince {
             ultimo = current;
 
         }while(swapped);
+    }
+
+    public String visualizzaLista(){
+        String elenco = "";
+        Provincia current = head;
+        while(current != null){
+            elenco += current.toString() + "\n";
+            current = current.getNext();
+        }
+
+        return elenco;
     }
 }

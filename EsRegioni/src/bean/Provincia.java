@@ -9,7 +9,7 @@ public class Provincia {
 
     @Override
     public String toString() {
-        return super.toString();
+        return abbreviazione + " " + nome + " " + regione;
     }
 
     public Provincia(String abbreviazione, String nome, String regione) {
