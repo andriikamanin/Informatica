@@ -7,18 +7,26 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FileLoader {
+    private String filePath;
+
+    public FileLoader(String filePath) {
+        this.filePath = filePath;
+    }
+
     public List<String> loadFromFile() {
         List<String> data = new ArrayList<>();
 
-        try (BufferedReader br = new BufferedReader(new FileReader("elenco.txt"))) {
+        try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
             String line;
             while ((line = br.readLine()) != null) {
                 data.add(line);
             }
         } catch (IOException e) {
-            System.out.println("Ошибка при чтении файла: " + e.getMessage());
+            System.err.println("Error reading file: " + e.getMessage());
+            // Consider logging the error or notifying the user
         }
 
         return data;
     }
 }
+
