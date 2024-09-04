@@ -65,6 +65,31 @@ public class Main {
     }
 
 
+    public static void bubbleSort(int[] arr, int size) {
+        for(int i = 0; i < size; i++){
+            for(int j = 0; j < size - 1 - i; j++){
+                if(arr[j] > arr[j+1]){
+                    int temp = arr[j];
+                    arr[j] = arr[j+1];
+                    arr[j+1] = temp;
+
+                }
+
+            }
+        }
+        System.out.println("Array ordinato in modo crescente: ");
+        outputArray(arr, size);
+
+    }
+    public static void controllaSeInModoCrescente(int[] arr, int size){
+        for(int i = 0; i < size-1; i++){
+            if(arr[i] > arr[i+1]){
+                System.out.println("Array non e' ordinato in modo decrescente.");
+            }
+        }
+        System.out.println("Array ordinato in modo decrescente!");
+    }
+
     public static void main(String[] args) {
         final int SIZE = 100;
         int[] arr = new int[SIZE];
@@ -73,5 +98,7 @@ public class Main {
         reverseArray(arr, SIZE);
         multiploPer3(arr,SIZE);
         findDuplicates(arr);
+        bubbleSort(arr, SIZE);
+        controllaSeInModoCrescente(arr, SIZE);
     }
 }
