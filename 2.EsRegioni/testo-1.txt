@@ -1,0 +1,10 @@
+Creare un applicativo console java che legga il file elenco.txt allegato al compito.
+Il file contiene tutte le provincie italiane con relativo codice e nome regione.
+Una volta letti i dati, ripulire il nome della provincia dal trattino sostituendolo con uno spazio.
+Creare una lista (manuale, non utilizzando java.util.List o sue implementazioni) di regioni, ordinata per nome crescente.
+Ogni regione poi deve contenere la lista (manuale, non utilizzando java.util.List o sue implementazioni) delle province relative a quella regione, anch'esse ordinate per nome crescente.
+Visualizzare a console l'elenco delle regioni e, in subordine per ogni regione, l'elenco delle province.
+Nella visualizzazione il nome della regione NON deve essere ripetuto, e sotto il nome ci dev'essere l'elenco delle province con un rientro di 4 spazi.
+
+Denominare il progetto con <classe>_<cognome>_<nome>, tutto minuscolo senza altri caratteri.
+Consegnare nella cartella del testo l'intero progetto in un file zip denominato come il progetto, avendo cura di eliminare la caretella bin.
