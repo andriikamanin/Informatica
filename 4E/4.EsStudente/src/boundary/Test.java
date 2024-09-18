@@ -8,5 +8,6 @@ public class Test {
         st.aggiungiStudente("andrii", "kamanin", "4e");
         st.aggiungiVoto("anndrii", "kamanin", "matematica", 7);
         System.out.println(st.visualizzaStudenti());
+        
     }
 }
